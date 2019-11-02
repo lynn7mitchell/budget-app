@@ -1,10 +1,10 @@
 # Youthgroup App
 
-Live Link: https://youthgroup.herokuapp.com/
+Live Link: TBA
 
 # Purpose
 
-This app was created to help youthgroups with keeping track of events. This app has an admin and student role so that the admin can add announcements. This will be updated with chat, albums, and payment for camps.
+This app was created to help with monthly budgeting
 
 # Built Using
 
@@ -13,6 +13,7 @@ This app was created to help youthgroups with keeping track of events. This app 
 - Materialize CSS
 - JavaScript
 - React.js
+- React Bootstrap
 - Node.js
 - Express.js
 - Mongo DB
@@ -21,16 +22,3 @@ This app was created to help youthgroups with keeping track of events. This app 
 - React-router-dom
 - Heroku
 
-# Screenshots
-
-## Login
-![Login](./client/src/images/login.png)
-
-## Home
-![Home](./client/src/images/home.png)
-
-## Events
-![Events](./client/src/images/event.png)
-
-## Event Form
-![Event Form](./client/src/images/eventform.png)# budget-app
