@@ -2,11 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
-    created_at:{
-        type: Date,
-        required: true,
-        default: Date.now()
-    },
     firstName:{
         type: String,
         required: true
@@ -23,34 +18,48 @@ var UserSchema = new Schema({
         type: String,
         required: true
     },
-    bio:{
-        type: String,
+    budgets:{
+        food:{
+            type: Number,
+            default: 0,
+        },
+        tansportation:{
+            type: Number,
+            default: 0,
+        },
+        lifestyle:{
+            type: Number,
+            default: 0,
+        },
+        housing:{
+            type: Number,
+            default: 0,
+        },
+        debt:{
+            type: Number,
+            default: 0,
+        },
+        insurance:{
+            type: Number,
+            default: 0,
+        },
+        savings:{
+            type: Number,
+            default: 0,
+        },
+        fun:{
+            type: Number,
+            default: 0,
+        }
     },
-    phoneNumber:{
-        type: String
-    },
-    address:{
-        type: String
-    },
-    age:{
-        type: Number
-    },
-    grade:{
+    spendingSoFar:{
         type: Number,
+        default: 0,
     },
-    school:{
-        type: String,
-    },
-    role:{
-        type: String,
-        default: "student"
+    toSpendThisMonth:{
+        type: Number,
+        default: 0,
     }
-
-    // image:{
-
-    // }
-
-
 })
 
 const User = mongoose.model("User", UserSchema);

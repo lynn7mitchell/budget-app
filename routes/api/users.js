@@ -44,11 +44,9 @@ module.exports = function (app) {
                         lastName: req.body.lastName,
                         email: req.body.email,
                         password: req.body.password,
-                        bio: req.body.bio,
-                        phoneNumber: req.body.phoneNumber,
-                        address: req.body.address,
-                        age: req.body.age,
-                        school: req.body.school,
+                        budgets: req.body.budgets,
+                        spendingSoFar: req.body.spendingSoFar,
+                        toSpendThisMonth: req.body.toSpendThisMonth
                     }
                     console.log(newUser)
                     bcrypt.genSalt(10, (err, salt) => {
@@ -137,7 +135,9 @@ module.exports = function (app) {
     // PUT
 
     app.put('/api/user', passport.authenticate('jwt', { session: false }), (req, res) => {
-        console.log(req.body.firstName)
+        // make sure to send the entire object again or else it will delete
+        //example: budgets has {food, housing, debt, etc...}
+        //         if you only send budgets.food in req.body it will delete all the other budgets
         db.User.findByIdAndUpdate(req.user.id, {$set:req.body})
         .then(user => {
             res.status(200).json({
