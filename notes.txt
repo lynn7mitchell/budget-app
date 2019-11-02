@@ -1,0 +1,42 @@
+MVP
+    -authetication (passport.js)
+     user
+        -first name
+        -last name
+        -img
+    -user profiles
+        -img
+        -favorite verse
+        -calendar events
+    -admin CMS
+        -set role in database as admin for that user
+        -add a switch in the sidenav to turn on edit/admin mode
+    -calendar
+        -users can add to the calendar
+    -gallery
+        -albums
+    
+
+Future
+
+
+   
+admin CMS: 
+
+chat: socket.io?,
+    -channels and direct messages in the sidenav
+
+calendar: fullcalendar api,
+    -add events
+        -title
+        -name of location
+        -address
+        -time
+    -button for "I'm going"
+
+gallery: add new album creates a collection in the database
+    -new album
+        -title
+        -thumbnail
+        -year
+
