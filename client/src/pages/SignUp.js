@@ -102,25 +102,25 @@ export class SignUp extends Component {
           {/* RIGHT SECTION */}
           <Col xs={12} md={8} className="right-section">
 
-            <Form>
+            <Form onSubmit={this.onSubmit}>
               <Row>
                 <Col xs={12} md={6}>
-                  <Form.Control type="text" placeholder="First name" />
+                  <Form.Control type="text" placeholder="First name" name="firstName" onChange={this.onChange} />
                 </Col>
                 <Col xs={12} md={6}>
-                  <Form.Control type="text" placeholder="Last name" />
+                  <Form.Control type="text" placeholder="Last name" name="lastName" onChange={this.onChange} />
                 </Col>
               </Row>
               <br/>
               <Row>
                 <Col xs={12}>
-                  <Form.Control type="email" placeholder="Email"/>
+                  <Form.Control type="email" placeholder="Email" name="email" onChange={this.onChange} />
                 </Col>
               </Row>
               <br/>
               <Row>
                 <Col xs={12}>
-                  <Form.Control type="password" placeholder="Password"/>
+                  <Form.Control type="password" placeholder="Password" name="password" onChange={this.onChange} />
                 </Col>
               </Row>
             <br/>
