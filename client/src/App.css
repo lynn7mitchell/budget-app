@@ -79,6 +79,13 @@ header {
     margin-bottom: 20px;
   }
   
+  .right-section{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
 @media only screen and (max-width: 600px) {
     .nav-warpper {
         background: #00CF60;
