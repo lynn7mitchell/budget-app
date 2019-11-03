@@ -1,27 +1,114 @@
 body {
     background: #F9FBFC;
-  }
+}
 
-  /* HOME */
-  header {
-    background: #00CF60;
-    padding-bottom: 10px;
-  }
-  
-  .heading {
-    color: #fff;
-  }
-  
-  h1 {
+h1 {
     font-size: 48px;
     line-height: 55px;
-  }
-  
-  h3 {
+}
+
+h3 {
     font-size: 30px;
-  }
-  
-  h4 {
+}
+
+h4 {
     font-size: 17px;
     line-height: 28px;
-  }
+}
+
+.button-white {
+    background: #fff;
+    color: #00CF60;
+    border-color: #00CF60;
+    border-radius: 10px;
+}
+
+/* HOME */
+header {
+    background: #00CF60;
+    padding-bottom: 10px;
+    height: 48vh
+}
+
+.heading {
+    height:75%;
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.landing-page-info {
+    margin-top: 2em;
+}
+
+.landing-page-info i {
+    display: block;
+    margin: 0 auto;
+    font-size: 156px;
+    text-align: center;
+    color: #0BD5DB;
+}
+
+.landing-page-info p {
+    text-align: center;
+}
+
+.landing-page-info h4 {
+    color: #00CF60;
+    text-align: center;
+}
+
+.landingpage-card {
+    height: 24em;
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-warpper {
+        background: #00CF60;
+    }
+
+    .white-nav .brand-logo {
+        color: #fff;
+    }
+
+
+    h1 {
+        font-size: 3em;
+        text-align: center;
+    }
+
+    h4 {
+        text-align: center
+    }
+
+    .heading a {
+        margin: 0 auto;
+        display: block;
+    }
+
+
+    form {
+        background: #00CF60;
+        text-align: center;
+        color: #fff;
+    }
+
+    label {
+        color: #fff !important;
+    }
+
+    .login-signup-green {
+        background: #fff;
+        color: #00CF60;
+    }
+
+
+    .green-wrapper {
+        background: #00CF60;
+        height: 105vh;
+        text-align: center;
+        color: #fff;
+    }
+
+}
