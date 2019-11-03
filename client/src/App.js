@@ -1,17 +1,14 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import PrivateRoute from "./utils/PrivateRoute";
-import Events from "./pages/Events";
-import Navbar from "./components/basic/Navbar";
-import Login from "./pages/Login";
-import Home from "./pages/Home";
-import NoMatch from "./pages/NoMatch";
+import Landing from "./pages/Landing";
 import SignUp from "./pages/SignUp";
-import CreateEvent from "./components/CreateEvent";
-import CreateAnnouncement from "./components/CreateAnnouncement";
+import Login from "./pages/Login";
+import NoMatch from "./pages/NoMatch";
+import Dashboard from "./pages/Dashboard"
 
-import AdminSwitch from "./components/basic/AdminSwitch";
 
 export class App extends Component {
   render() {
@@ -19,18 +16,10 @@ export class App extends Component {
       <div>
         <Router>
           <Switch>
-            <Route exact path="/" component={Login} />
-            <Route exact path="/SignUp" component={SignUp} />
-            <PrivateRoute exact path="/Navbar" component={Navbar} />
-
-            <PrivateRoute exact path="/home" component={Home} />
-            <PrivateRoute exact path="/events" component={Events} />
-            <PrivateRoute exact path="/createevent" component={CreateEvent} />
-            <PrivateRoute
-              exact
-              path="/createannouncement"
-              component={CreateAnnouncement}
-            />
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/login" component={Login} />
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <Route exact component={NoMatch} />
           </Switch>
         </Router>
