@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Redirect } from 'react-router-dom'
-import axios from 'axios'
-import Logo from "../images/logo.svg";
+import { Redirect } from "react-router-dom"
+import axios from "axios"
 import authenticate from "../utils/Authenticate";
 import setAuthToken from "../utils/setAuthtoken";
 
@@ -11,8 +10,8 @@ export class Login extends Component {
         super();
         this.state={
             redirect: false,
-            email: '',
-            password: '',
+            email: "",
+            password: "",
             errors:{}
         }
     }
@@ -89,7 +88,6 @@ export class Login extends Component {
     }
     return (
       <div>
-        <img src={Logo} className="logo" style={styles.logo} />
         <div className="container">
           <div className="row">
             <form className="col s12" onSubmit={this.onSubmit}>

@@ -63,6 +63,22 @@ header {
     height: 24em;
 }
 
+
+/* LOGIN AND SIGNUP */
+.left-section {
+    padding: 2%;
+    width: 40%;
+    height: 90vh;
+    background: #00CF60;
+    color: #fff;
+    line-height: 26px;
+  }
+  
+  .left-section h2 {
+    margin-top: 25vh;
+    margin-bottom: 20px;
+  }
+  
 @media only screen and (max-width: 600px) {
     .nav-warpper {
         background: #00CF60;

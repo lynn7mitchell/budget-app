@@ -6,7 +6,6 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col"
-import Card from "react-bootstrap/Card"
 
 
 
@@ -22,7 +21,7 @@ export class Landing extends Component {
       <div>
         <header>
           {/* NAVBAR */}
-          <Navbar collapseOnSelect expand="lg" bg="transparent" variant="dark">
+          <Navbar expand="lg" bg="transparent" variant="dark">
             <Navbar.Brand href="#home">Budget Master</Navbar.Brand>
               <Nav className="mr-auto">
               </Nav>

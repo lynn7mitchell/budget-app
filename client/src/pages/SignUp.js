@@ -1,128 +1,87 @@
 import React, { Component } from "react";
-import Logo from "../images/logo.svg";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col"
 
 export class SignUp extends Component {
 
 
 
-    state={
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: ""
+  state = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: ""
+  }
+
+
+  onChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+
+  onSubmit = e => {
+    e.preventDefault();
+
+    const newUser = {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      password: this.state.password
     }
 
 
-    onChange = e =>{
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
-
-
-    onSubmit = e =>{
-        e.preventDefault();
-
-        const newUser={
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            email: this.state.email,
-            password: this.state.password
-        }
-
-
-        axios.post('api/user', newUser)
-        .then(console.log(newUser))
-        .catch(err => console.log(err))
-    }
+    axios.post('api/user', newUser)
+      .then(console.log(newUser))
+      .catch(err => console.log(err))
+  }
 
   render() {
     const styles = {
-      logo: {
-        display: "block",
-        margin: "0 auto",
-        paddingBottom: "15px",
-        width: "28vw",
-        
+      nav:{
+        boxShadow: "10px"
+      },
+     brand:{
+       color: "#00CF60"
+     }
 
       }
-    };
     return (
       <div>
+        {/* NAVBAR */}
+        <Navbar expand="lg" bg="transparent" variant="dark" className="shadow ">
+         <Link to="/" ><Navbar.Brand style={styles.brand}>Budget Master</Navbar.Brand></Link>
+          <Nav className="mr-auto">
+          </Nav>
+          <Link to="/login" >
+            <Button variant="outline-success" className="button-white" style={styles.button}>Login</Button>
+          </Link>
+          <Link to="/signup" >
+            <Button variant="outline-success" className="button-white" style={styles.button}>Sign Up</Button>
+          </Link>
+        </Navbar>
 
-        <img src={Logo} style={styles.logo} className="logo"/>
-        <div className="container">
-          <div className="row">
-            <form className="col s12" onSubmit={this.onSubmit}>
-              <div className="row">
-                <div className="input-field col s6">
-                  <input
-                    placeholder="First Name"
-                    id="first_name"
-                    type="text"
-                    className="validate"
-                    name="firstName"
-                    onChange={this.onChange}
-                  />
-                  <label htmlFor="last_name">First Name</label>
-                </div>
-                <div className="input-field col s6">
-                  <input
-                    placeholder="Last Name"
-                    id="first_name"
-                    type="text"
-                    className="validate"
-                    name="lastName"
+        {/* LEFT SECTION */}
+        <Row>
+          <Col xs={12} md={4} className="left-section">
+          <h2>Sign Up</h2>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et
+                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet
+                clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p>Already have an account? <span>Log In!</span></p>
+            <Button variant="outline-success" className="button-white" style={styles.button}>Login</Button>
 
-                    onChange={this.onChange}
-                  />
-                  <label htmlFor="first_name">Last Name</label>
-                </div>
-              </div>
-
-              <div className="row">
-                <div className="input-field col s12">
-                  <input
-                    placeholder="Email"
-                    id="email"
-                    type="email"
-                    className="validate"
-                    name="email"
-
-                    onChange={this.onChange}
-                  />
-                  <label htmlFor="email">Email</label>
-                </div>
-              </div>
-
-              <div className="row">
-                <div className="input-field col s12">
-                  <input
-                    placeholder="Password"
-                    id="password"
-                    type="password"
-                    className="validate"
-                    name="password"
-
-                    onChange={this.onChange}
-                  />
-                  <label htmlFor="password">Password</label>
-                </div>
-                <div className="row">
-                  <button
-                    className="btn waves-effect waves-light"
-                    type="submit"
-                    name="action"
-                  >
-                    Submit
-                    <i className="material-icons right">send</i>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
+          </Col>
+        </Row>
       </div>
     );
   }
