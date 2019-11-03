@@ -1,8 +1,14 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom"
+import { Redirect, Link } from "react-router-dom"
 import axios from "axios"
 import authenticate from "../utils/Authenticate";
 import setAuthToken from "../utils/setAuthtoken";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
 
 export class Login extends Component {
 
@@ -63,14 +69,12 @@ export class Login extends Component {
     }
   render() {
     const styles = {
-        logo:{
-            display: "block",
-            margin: "0 auto",
-            width: "28vw",
-           
-        },
-        
-        
+      nav: {
+        boxShadow: "10px"
+      },
+      brand: {
+        color: "#00CF60"
+      },
         error:{
           color: "#cc0000",
           fontSize: "0.8rem",
@@ -84,64 +88,81 @@ export class Login extends Component {
     const {errors} = this.state;
 
     if(this.state.redirect){
-      return <Redirect to="/home"/>
+      return <Redirect to="/dashboard"/>
     }
     return (
       <div>
-        <div className="container">
-          <div className="row">
-            <form className="col s12" onSubmit={this.onSubmit}>
-              <div className="row">
-                <div className="input-field col s12">
-                  <input id="email" type="email" className="validate" name="email" value={this.state.email} onChange={this.onChange}/>
-                  <label htmlFor="email">Email</label>
-                </div>
-                {errors.user && (
-                        <div style={styles.error}>
-                            {errors.user}
-                        </div>
-                    )}
-              </div>
+        {/* NAVBAR */}
+        <Navbar expand="lg" bg="transparent" variant="dark" className="shadow ">
+          <Link to="/">
+            <Navbar.Brand style={styles.brand}>Budget Master</Navbar.Brand>
+          </Link>
+          <Nav className="mr-auto"></Nav>
+          <Link to="/login">
+            <Button
+              variant="outline-success"
+              className="button-white"
+              style={styles.button}
+            >
+              Login
+            </Button>
+          </Link>
+          <Link to="/signup">
+            <Button
+              variant="outline-success"
+              className="button-white"
+              style={styles.button}
+            >
+              Sign Up
+            </Button>
+          </Link>
+        </Navbar>
 
-              <div className="row">
-                <div className="input-field col s12">
-                  <input id="password" type="password" className="validate" name="password" value={this.state.password} onChange={this.onChange}/>
-                  <label htmlFor="password">Password</label>
-                </div>
-                {errors.password && (
-                        <div style={styles.error}>
-                            {errors.password}
-                        </div>
-                    )}
-              </div>
-              <div className="row">
-                <button
-                  className="btn waves-effect waves-light"
-                  type="submit"
-                  name="action"
-                >
-                  Submit
-                  <i className="material-icons right">send</i>
-                </button>
-              </div>
-              <div className="row">
-                <p>Don't have an account? <a href="/SignUp">Click here to sign up!</a></p>
-              </div>
-              <div className="row">
-                <div className="col s6">
-                <p>admin login:</p>
-                <p>Email: admintest@gmail.com</p>
-                <p>Password: admintest</p>
-                </div>
-                <div className="col s6">
-                <p>student login:</p>
-                <p>Email: studenttest@gmail.com</p>
-                <p>Password: studenttest</p>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
+        {/* LEFT SECTION */}
+        <Row>
+          <Col xs={12} md={4} className="left-section">
+            <h2>Sign Up</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet.
+            </p>
+            <p>
+              Already have an account? <span>Log In!</span>
+            </p>
+            <Button
+              variant="outline-success"
+              className="button-white"
+              style={styles.button}
+            >
+              Login
+            </Button>
+          </Col>
+
+          {/* RIGHT SECTION */}
+          <Col xs={12} md={8} className="right-section">
+
+            <Form onSubmit={this.onSubmit}>
+              <Row>
+                <Col xs={12}>
+                  <Form.Control type="email" placeholder="Email" name="email" onChange={this.onChange} />
+                </Col>
+              </Row>
+              <br/>
+              <Row>
+                <Col xs={12}>
+                  <Form.Control type="password" placeholder="Password" name="password" onChange={this.onChange} />
+                </Col>
+              </Row>
+            <br/>
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+            </Form>
+          </Col>
+        </Row>
       </div>
     );
   }
