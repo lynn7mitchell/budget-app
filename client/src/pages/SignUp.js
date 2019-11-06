@@ -45,6 +45,9 @@ export class SignUp extends Component {
       },
       brand: {
         color: "#00CF60"
+      },
+      button: {
+        marginLeft: 5
       }
     };
     return (

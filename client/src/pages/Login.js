@@ -68,6 +68,7 @@ export class Login extends Component {
             )
     }
   render() {
+   
     const styles = {
       nav: {
         boxShadow: "10px"
@@ -80,8 +81,10 @@ export class Login extends Component {
           fontSize: "0.8rem",
           margin: 0,
           
+        },
+        button: {
+          marginLeft: 5
         }
-
         
     };
 
@@ -90,6 +93,7 @@ export class Login extends Component {
     if(this.state.redirect){
       return <Redirect to="/dashboard"/>
     }
+    
     return (
       <div>
         {/* NAVBAR */}
