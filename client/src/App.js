@@ -8,6 +8,7 @@ import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
 import Dashboard from "./pages/Dashboard"
+import AddTransaction from "./pages/AddTransaction"
 
 
 export class App extends Component {
@@ -20,6 +21,7 @@ export class App extends Component {
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/login" component={Login} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/add-transaction" component={AddTransaction} />
             <Route exact component={NoMatch} />
           </Switch>
         </Router>

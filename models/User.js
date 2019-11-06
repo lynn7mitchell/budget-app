@@ -52,6 +52,13 @@ var UserSchema = new Schema({
             default: 0,
         }
     },
+    transactions:[{
+        date: String,
+        description: String,
+        category: String,
+        amount: String
+        
+    }], 
     spendingSoFar:{
         type: Number,
         default: 0,
