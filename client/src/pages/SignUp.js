@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
+import Container from "react-bootstrap/Container"
 
 export class SignUp extends Component {
   state = {
@@ -103,7 +104,7 @@ export class SignUp extends Component {
 
           {/* RIGHT SECTION */}
           <Col xs={12} md={8} className="right-section">
-
+            <Container>
             <Form onSubmit={this.onSubmit}>
               <Row>
                 <Col xs={12} md={6}>
@@ -130,6 +131,7 @@ export class SignUp extends Component {
                 Submit
               </Button>
             </Form>
+            </Container>
           </Col>
         </Row>
       </div>
