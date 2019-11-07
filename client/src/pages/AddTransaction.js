@@ -9,16 +9,18 @@ export class AddTransaction extends Component {
     
     render() {
         return (
-            <div>
+            <Container>
             <Form onSubmit={this.onSubmit}>
               <Row>
                 <Col xs={12}>
+                <Form.Label>Amount</Form.Label>
                   <Form.Control type="text" placeholder="Amount" name="amount" onChange={this.onChange} />
                 </Col>
               </Row>
               <br/>
               <Row>
                 <Col xs={12}>
+                <Form.Label>Description</Form.Label>
                   <Form.Control type="text" placeholder="Description" name="description" onChange={this.onChange} />
                 </Col>
               </Row>
@@ -26,6 +28,7 @@ export class AddTransaction extends Component {
 
               <Row>
                 <Col xs={12}>
+                <Form.Label>Category</Form.Label>
                   <Form.Control  as="select">
                       <option>Food</option>
                       <option>Transportation</option>
@@ -42,15 +45,41 @@ export class AddTransaction extends Component {
 
               <Row>
                 <Col xs={12}>
-                  <Form.Control type="text" placeholder="amount" name="amount" onChange={this.onChange} />
+                  <Form.Label>Date</Form.Label>
+                  <Row>
+                    <Col xs={6}>
+                    <Form.Control  as="select">
+                      <option>Food</option>
+                      <option>Transportation</option>
+                      <option>Lifestyle</option>
+                      <option>Housing</option>
+                      <option>Debt</option>
+                      <option>Insurance</option>
+                      <option>Savings</option>
+                      <option>Fun</option>
+                  </Form.Control>
+                    </Col>
+                    <Col xs={6}>
+                    <Form.Control  as="select">
+                      <option>Food</option>
+                      <option>Transportation</option>
+                      <option>Lifestyle</option>
+                      <option>Housing</option>
+                      <option>Debt</option>
+                      <option>Insurance</option>
+                      <option>Savings</option>
+                      <option>Fun</option>
+                  </Form.Control>
+                    </Col>
+                  </Row>
                 </Col>
               </Row>
             <br/>
-              <Button variant="primary" type="submit">
+              <Button variant="success" type="submit">
                 Submit
               </Button>
             </Form>
-            </div>
+            </Container>
         )
     }
 }
