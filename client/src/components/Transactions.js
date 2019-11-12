@@ -1,12 +1,38 @@
-import React, { Component } from 'react'
-import Table from "react-bootstrap/Table"
-import Button from "react-bootstrap/Button"
-import Modal from "react-bootstrap/Modal"
-import Form from "react-bootstrap/Form"
+import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+import axios from "axios";
+import setAuthToken from "../utils/setAuthtoken";
+import Moment from "react-moment";
+import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
 
 export class Transactions extends Component {
     
+    state = {
+        user: {},
+        transactions: []
+      };
+
+    componentWillMount() {
+        const token = localStorage.getItem("example-app");
+    
+        if (token) {
+          setAuthToken(token);
+        }
+    
+        axios
+          .get("api/user")
+          .then(response => {
+            this.setState({
+              user: response.data,
+              transactions: response.data.transactions
+            });
+          })
+          .catch(err => console.log(err.response));
+      }
+
     render() {
+
         return (
             <div>
                 <h3>Transactions</h3>
@@ -21,26 +47,17 @@ export class Transactions extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td colSpan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                        {this.state.transactions.map(transaction =>
+                            <tr>
+                                <td><Moment format="MM/DD/YYYY">{transaction.date}</Moment></td>
+                                <td>{transaction.description}</td>
+                                <td>{transaction.category}</td>
+                                <td>{transaction.amount}</td>
+                            </tr>
+                            )}
                     </tbody>
                 </Table>
-                <Button variant="success">Add Transaction</Button>
+                <Link to="add-transaction"><Button variant="success">Add Transaction</Button></Link>
             </div>
         )
     }
