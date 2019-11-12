@@ -1,15 +1,45 @@
-import React, { Component } from 'react'
-import Transactions from "../components/Transactions"
-import Container from "react-bootstrap/Container"
+import React, { Component } from 'react';
+import { Redirect } from "react-router-dom"
+import Transactions from "../components/Transactions";
+import Container from "react-bootstrap/Container";
+import axios from "axios";
+import setAuthToken from "../utils/setAuthtoken";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 export class Dashboard extends Component {
-    // DASHBOARD or SUMMARY
-    //Transactions
-    //Crypto Watch
-    //Money News
+    state={
+        user: {},
+        redirect: false,
+    }
+    componentWillMount() {
+        const token = localStorage.getItem("example-app");
+    
+        if (token) {
+          setAuthToken(token);
+        }
+    
+        axios
+          .get("api/user")
+          .then(response => {
+            this.setState({
+              user: response.data
+            });
+          })
+          .catch(err => console.log(err.response));
+      }
+      handleLogout = () => {
+        localStorage.removeItem("example-app");
+        this.setState({
+          redirect: true
+        });
+      };
+
+      
     render() {
+        if(this.state.redirect){
+            return <Redirect to="/"/>
+          }
         return (
             <div>
                 {/* <i className="material-icons account-circle">account_circle</i> */}
@@ -21,7 +51,7 @@ export class Dashboard extends Component {
                             <li>Tansactions</li>
                             <li>Crypto Watch</li>
                             <li>Your Account</li>
-                            <li>Log Out</li>
+                            <a onClick={this.handleLogout} ><li cursor="pointer">Log Out</li></a>
                         </ul>
                     </Col>
                     <Col xs={10}>
