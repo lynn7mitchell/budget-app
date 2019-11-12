@@ -29,6 +29,13 @@ h4 {
     border-radius: 10px;
 }
 
+.back-button{
+    position: absolute;
+    top: 2vh;
+    left: 2vh;
+    color: #000;
+  }
+
 /* HOME */
 header {
     background: #00CF60;
