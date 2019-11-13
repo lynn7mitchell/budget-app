@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom"
 import Transactions from "../components/Transactions";
+import Budgets from "../components/Budgets"
 import Container from "react-bootstrap/Container";
 import axios from "axios";
 import setAuthToken from "../utils/setAuthtoken";
@@ -51,7 +52,7 @@ export class Dashboard extends Component {
                             <li>Tansactions</li>
                             <li>Crypto Watch</li>
                             <li>Your Account</li>
-                            <a onClick={this.handleLogout} ><li cursor="pointer">Log Out</li></a>
+                            <a onClick={this.handleLogout}><li cursor="pointer">Log Out</li></a>
                         </ul>
                     </Col>
                     <Col xs={10}>
@@ -59,6 +60,9 @@ export class Dashboard extends Component {
                             <Row>
                                 <Col className="card" md={7}>
                                     <Transactions />
+                                </Col>
+                                <Col className="card" md={5}>
+                                    <Budgets />
                                 </Col>
                             </Row>
                         </Container>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
@@ -14,7 +14,8 @@ export class SignUp extends Component {
     firstName: "",
     lastName: "",
     email: "",
-    password: ""
+    password: "",
+    redirect: false
   };
 
   onChange = e => {
@@ -37,6 +38,10 @@ export class SignUp extends Component {
       .post("api/user", newUser)
       .then(console.log(newUser))
       .catch(err => console.log(err));
+
+      this.setState({
+        redirect: true
+      })
   };
 
   render() {
@@ -51,6 +56,9 @@ export class SignUp extends Component {
         marginLeft: 5
       }
     };
+    if(this.state.redirect){
+      return <Redirect to="/new-user-budgets"/>
+    }
     return (
       <div>
         {/* NAVBAR */}
