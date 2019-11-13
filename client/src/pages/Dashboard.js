@@ -46,7 +46,7 @@ export class Dashboard extends Component {
                 {/* <i className="material-icons account-circle">account_circle</i> */}
                 <Row>
                     <Col xs={2} className="dashboard-sidebar">
-                        <h4>Welcome Name</h4>
+                        <h4>Welcome {this.state.user.firstName} {this.state.user.lastName}</h4>
                         <ul className="sidebar-items">
                             <li>Dashboard</li>
                             <li>Tansactions</li>
