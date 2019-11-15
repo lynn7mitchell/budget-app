@@ -23,7 +23,7 @@ export class App extends Component {
             <Route exact path="/login" component={Login} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/add-transaction" component={AddTransaction} />
-            <PrivateRoute exact path="/add-transaction" component={EditBudgets} />
+            <PrivateRoute exact path="/edit-budgets" component={EditBudgets} />
             <Route exact component={NoMatch} />
           </Switch>
         </Router>
