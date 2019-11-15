@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom"
 import axios from "axios";
 import setAuthToken from "../utils/setAuthtoken";
-import Table from "react-bootstrap/table"
+import Table from "react-bootstrap/table";
+import Button from "react-bootstrap/button"
 
 export class Budgets extends Component {
   state = {
@@ -156,6 +158,8 @@ export class Budgets extends Component {
            
           </tbody>
         </Table>
+        <Link to="edit-budgets"><Button variant="success">Edit Budgets</Button></Link>
+
       </div>
     );
   }
