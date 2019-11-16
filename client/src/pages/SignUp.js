@@ -49,9 +49,7 @@ export class SignUp extends Component {
       nav: {
         boxShadow: "10px"
       },
-      brand: {
-        color: "#00CF60"
-      },
+      
       button: {
         marginLeft: 5
       }
@@ -60,9 +58,9 @@ export class SignUp extends Component {
       return <Redirect to="/new-user-budgets"/>
     }
     return (
-      <div>
+      <div className="login-signup">
         {/* NAVBAR */}
-        <Navbar expand="lg" bg="transparent" variant="dark" className="shadow ">
+        <Navbar expand="lg" bg="transparent" variant="dark" className="shadow mobile-green">
           <Link to="/">
             <Navbar.Brand style={styles.brand}>Budget Master</Navbar.Brand>
           </Link>
@@ -94,9 +92,6 @@ export class SignUp extends Component {
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet.
             </p>
             <p>
               Already have an account? <span>Log In!</span>
@@ -115,10 +110,10 @@ export class SignUp extends Component {
             <Container>
             <Form onSubmit={this.onSubmit}>
               <Row>
-                <Col xs={12} md={6}>
+                <Col xs={6} md={6}>
                   <Form.Control type="text" placeholder="First name" name="firstName" onChange={this.onChange} />
                 </Col>
-                <Col xs={12} md={6}>
+                <Col xs={6} md={6}>
                   <Form.Control type="text" placeholder="Last name" name="lastName" onChange={this.onChange} />
                 </Col>
               </Row>
