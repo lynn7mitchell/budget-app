@@ -94,7 +94,7 @@ export class SignUp extends Component {
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             </p>
             <p>
-              Already have an account? <span>Log In!</span>
+              Already have an account? <Link to="login"><span>Log In!</span></Link>
             </p>
             <Button
               variant="outline-success"

@@ -123,13 +123,13 @@ export class Login extends Component {
         {/* LEFT SECTION */}
         <Row>
           <Col xs={12} md={4} className="left-section">
-            <h2>Sign Up</h2>
+            <h2>Log In</h2>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             </p>
             <p>
-              Already have an account? <span>Log In!</span>
+              Already have an account? <Link to="signup"><span>Sign Up!</span></Link>
             </p>
             <Button
               variant="outline-success"
