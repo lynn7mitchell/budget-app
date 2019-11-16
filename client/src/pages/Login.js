@@ -74,9 +74,6 @@ export class Login extends Component {
       nav: {
         boxShadow: "10px"
       },
-      brand: {
-        color: "#00CF60"
-      },
         error:{
           color: "#cc0000",
           fontSize: "0.8rem",
@@ -96,9 +93,9 @@ export class Login extends Component {
     }
     
     return (
-      <div>
+      <div className="login-signup">
         {/* NAVBAR */}
-        <Navbar expand="lg" bg="transparent" variant="dark" className="shadow ">
+        <Navbar expand="lg" bg="transparent" variant="dark" className="shadow mobile-green">
           <Link to="/">
             <Navbar.Brand style={styles.brand}>Budget Master</Navbar.Brand>
           </Link>
@@ -130,9 +127,6 @@ export class Login extends Component {
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet.
             </p>
             <p>
               Already have an account? <span>Log In!</span>

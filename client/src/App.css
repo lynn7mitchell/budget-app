@@ -189,4 +189,32 @@ header {
         color: #fff;
     }
 
+
+
+
+    /* LOGIN AND SIGNUP */
+
+    .mobile-green{
+        background-color: #00CF60 !important;
+    }
+    .left-section{
+        background: #fff;
+        color: #000;
+        padding: 0 20px;
+        height: 30vh
+        
+    }
+    .left-section h2{
+        margin-top: 5vh;
+    }
+    .left-section button{
+        display: none;
+    }
+    .right-section{
+        justify-content: flex-start;
+    }
+    .login-signup form{
+        background: #fff;
+    }
+
 }

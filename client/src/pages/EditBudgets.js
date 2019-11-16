@@ -16,42 +16,50 @@ export class EditBudgets extends Component {
     food: {
       spent: 0,
       remaining: 0,
-      limit: 0
+      limit: 0,
+      newValue: 0
     },
     transportation: {
       spent: 0,
       remaining: 0,
-      limit: 0
+      limit: 0,
+      newValue: 0
     },
     lifestyle: {
       spent: 0,
       remaining: 0,
-      limit: 0
+      limit: 0,
+      newValue: 0
     },
     housing: {
       spent: 0,
       remaining: 0,
-      limit: 0
+      limit: 0,
+      newValue: 0
     },
     debt: {
       spent: 0,
       remaining: 0,
-      limit: 0
+      limit: 0,
+      newValue: 0
     },
     insurance: {
       spent: 0,
       remaining: 0,
-      limit: 0
+      limit: 0,
+      newValue: 0
     },
     savings: {
       spent: 0,
       remaining: 0,
-      limit: 0
+      limit: 0,
+      newValue: 0
     },
     fun: {
       spent: 0,
       remaining: 0,
-      limit: 0
+      limit: 0,
+      newValue: 0
     }
   };
 
@@ -95,10 +103,22 @@ export class EditBudgets extends Component {
       .catch(err => console.log(err.response));
   }
 
+    onChange = e => {
+        this.setState({
+          [e.target.name]:{
+            newValue: e.target.value
+          }
+        });
+      };
+  
   onSubmit = e =>{
      const newBudget = {
-
+        budgets: {
+            insurance: this.state.food.newValue
+        }
       }
+
+      console.log(newBudget)
   }
   render() {
     return (
@@ -123,8 +143,8 @@ export class EditBudgets extends Component {
                     <Form.Control
                       type="number"
                       step="0.01"
-                      value={this.state.food.limit}
                       name="amount"
+                      placeholder={this.state.food.limit}
                       onChange={this.onChange}
                     />
                   </td>
@@ -137,7 +157,6 @@ export class EditBudgets extends Component {
                   <Form.Control
                       type="number"
                       step="0.01"
-                      value={this.state.transportation.limit}
                       name="amount"
                       onChange={this.onChange}
                     />
@@ -151,7 +170,6 @@ export class EditBudgets extends Component {
                   <Form.Control
                       type="number"
                       step="0.01"
-                      value={this.state.lifestyle.limit}
                       name="amount"
                       onChange={this.onChange}
                     />
@@ -165,9 +183,9 @@ export class EditBudgets extends Component {
                   <Form.Control
                       type="number"
                       step="0.01"
-                      value={this.state.housing.limit}
                       name="amount"
                       onChange={this.onChange}
+                      placeholder={this.state.food.limit}
                     />
                     </td>
                 </tr>
@@ -179,7 +197,6 @@ export class EditBudgets extends Component {
                   <Form.Control
                       type="number"
                       step="0.01"
-                      value={this.state.debt.limit}
                       name="amount"
                       onChange={this.onChange}
                     />
@@ -193,9 +210,9 @@ export class EditBudgets extends Component {
                   <Form.Control
                       type="number"
                       step="0.01"
-                      value={this.state.insurance.limit}
                       name="amount"
                       onChange={this.onChange}
+                      placeholder={this.state.food.limit}
                     />
                     </td>
                 </tr>
@@ -207,7 +224,6 @@ export class EditBudgets extends Component {
                   <Form.Control
                       type="number"
                       step="0.01"
-                      value={this.state.savings.limit}
                       name="amount"
                       onChange={this.onChange}
                     />
@@ -221,7 +237,6 @@ export class EditBudgets extends Component {
                   <Form.Control
                       type="number"
                       step="0.01"
-                      value={this.state.fun.limit}
                       name="amount"
                       onChange={this.onChange}
                     />
