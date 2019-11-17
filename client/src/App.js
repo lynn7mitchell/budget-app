@@ -12,6 +12,7 @@ import AddTransaction from "./pages/AddTransaction"
 import EditBudgets from "./pages/EditBudgets"
 import TransactionPage from "./pages/TrasactionPage"
 import BudgetPage from "./pages/BudgetPage"
+import SetupBudgets from "./pages/SetupBudgets";
 
 
 export class App extends Component {
@@ -23,6 +24,7 @@ export class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/login" component={Login} />
+            <PrivateRoute exact path="/setup-budgets" component={SetupBudgets} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/transactions" component={TransactionPage} />
             <PrivateRoute exact path="/budgets" component={BudgetPage} />

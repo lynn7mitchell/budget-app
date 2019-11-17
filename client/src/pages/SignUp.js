@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import authenticate from "../utils/Authenticate";
+import setAuthToken from "../utils/setAuthtoken";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
@@ -37,11 +39,29 @@ export class SignUp extends Component {
     axios
       .post("api/user", newUser)
       .then(console.log(newUser))
-      .catch(err => console.log(err));
+      .catch(err => console.log(err))
 
-      this.setState({
-        redirect: true
-      })
+      const token = localStorage.getItem('example-app');
+
+      axios.post("/api/user/login", newUser)
+        .then(response =>{
+
+          if (response.data.token){
+            const {token} = response.data;
+
+            localStorage.setItem('example-app', token);
+            setAuthToken(token);
+          }
+          this.setState({
+            redirect: true,
+            errors: {}
+          })
+        })
+        .catch(err => 
+                this.setState({
+                    errors: err.response.data
+                })
+            )
   };
 
   render() {
@@ -55,7 +75,7 @@ export class SignUp extends Component {
       }
     };
     if(this.state.redirect){
-      return <Redirect to="/new-user-budgets"/>
+      return <Redirect to="/setup-budgets"/>
     }
     return (
       <div className="login-signup">
