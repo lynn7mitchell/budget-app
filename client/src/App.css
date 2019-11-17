@@ -12,7 +12,9 @@ h1 {
     font-size: 48px;
     line-height: 55px;
 }
-
+h2{
+    color: #00CF60
+}
 h3 {
     font-size: 30px;
 }
@@ -28,7 +30,12 @@ h4 {
     border-color: #00CF60;
     border-radius: 10px;
 }
-
+.button-green {
+    background: #00CF60;
+    color: #fff;
+    border-color: #00CF60;
+    border-radius: 10px;
+}
 .back-button{
     position: absolute;
     top: 2vh;

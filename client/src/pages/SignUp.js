@@ -94,7 +94,7 @@ export class SignUp extends Component {
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             </p>
             <p>
-              Already have an account? <Link to="login"><span>Log In!</span></Link>
+              Already have an account? <Link to="login" style={{color: "#00CF60"}}><span>Log In!</span></Link>
             </p>
             <Button
               variant="outline-success"
@@ -130,7 +130,7 @@ export class SignUp extends Component {
                 </Col>
               </Row>
             <br/>
-              <Button variant="primary" type="submit">
+              <Button className="button-green" type="submit">
                 Submit
               </Button>
             </Form>
