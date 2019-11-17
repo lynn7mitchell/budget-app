@@ -37,7 +37,7 @@ export class Transactions extends Component {
             <div>
                 <h3>Transactions</h3>
                 <hr/>
-                <Table striped bordered hover>
+                <Table striped bordered hover className="transactions-table">
                     <thead>
                         <tr>
                             <th>Date</th>
