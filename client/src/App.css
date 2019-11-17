@@ -224,4 +224,11 @@ header {
         background: #fff;
     }
 
+
+    /* DASHBOARD */
+
+    .dashboard-sidebar{
+        display: none;
+    }
+
 }
