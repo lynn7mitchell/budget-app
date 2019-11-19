@@ -41,7 +41,8 @@ export class SignUp extends Component {
       .then(console.log(newUser))
       .catch(err => console.log(err))
 
-      const token = localStorage.getItem('example-app');
+      setTimeout(() => {
+        const token = localStorage.getItem('example-app');
 
       axios.post("/api/user/login", newUser)
         .then(response =>{
@@ -62,6 +63,8 @@ export class SignUp extends Component {
                     errors: err.response.data
                 })
             )
+      }, 300);
+      
   };
 
   render() {
