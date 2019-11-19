@@ -149,7 +149,7 @@ module.exports = function (app) {
         
     });
 
-  // PUT
+  // PUT Transactions
 
   app.put('/api/user/transactions', passport.authenticate('jwt', { session: false }), (req, res) => {
     // make sure to send the entire object again or else it will delete
@@ -165,6 +165,23 @@ module.exports = function (app) {
     .catch(err => console.log(err))
     
 });
+
+// Put Budgets
+app.put('/api/user/budgets', passport.authenticate('jwt', { session: false }), (req, res) => {
+    // make sure to send the entire object again or else it will delete
+    //example: budgets has {food, housing, debt, etc...}
+    //         if you only send budgets.food in req.body it will delete all the other budgets
+    db.User.findByIdAndUpdate(req.user.id, {$set: {budgets: req.body}})
+    .then(user => {
+        res.status(200).json({
+            message: "budgets added.",
+            userCreated: true
+        })
+    })
+    .catch(err => console.log(err))
+    
+});
+
 
 
 

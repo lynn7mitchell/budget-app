@@ -23,7 +23,7 @@ var UserSchema = new Schema({
             type: Number,
             default: 0,
         },
-        tansportation:{
+        transportation:{
             type: Number,
             default: 0,
         },
