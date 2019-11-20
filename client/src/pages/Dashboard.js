@@ -7,7 +7,7 @@ import axios from "axios";
 import setAuthToken from "../utils/setAuthtoken";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Nav from "react-bootstrap/Nav";
+import Sidebar from "../components/Sidebar";
 
 export class Dashboard extends Component {
   state = {
@@ -46,19 +46,9 @@ export class Dashboard extends Component {
         {/* <i className="material-icons account-circle">account_circle</i> */}
         
         <Row>
-          <Col md={2} className="dashboard-sidebar">
-            <h4>
-              Welcome {this.state.user.firstName} {this.state.user.lastName}
-            </h4>
-            <ul className="sidebar-items">
-              <Link to="/budgets"><li>Dashboard</li></Link>
-              <Link to="/transactions"><li>Transactions</li></Link>
-              <Link to="/budgets"><li>Budgets</li></Link>
-              <a onClick={this.handleLogout}>
-                <li cursor="pointer">Log Out</li>
-              </a>
-            </ul>
-          </Col>
+        <Col md={2} className="dashboard-sidebar">
+          <Sidebar/>
+        </Col>
           <Col xs={12} md={10}>
             <Container>
               <Row>
