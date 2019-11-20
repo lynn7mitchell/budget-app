@@ -233,6 +233,10 @@ header .navbar-brand{
 
     .mobile-green{
         background-color: #00CF60 !important;
+        color: #fff;
+    }
+    .mobile-green .navbar-brand{
+        color: #fff !important;
     }
     .left-section{
         background: #fff;
@@ -249,10 +253,12 @@ header .navbar-brand{
     }
     .right-section{
         justify-content: flex-start;
+        margin-top: 2rem;
     }
     .login-signup form{
         background: #fff;
     }
+
 
 
     /* DASHBOARD */
