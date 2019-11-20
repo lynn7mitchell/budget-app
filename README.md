@@ -25,13 +25,13 @@ This app was created to help with monthly budgeting
 # Screenshots
 
 ## Home
-![Home](./client/src/images/Home.png)
+![Home](./client/src/images/home.png)
 
 ## Log In
 ![Log In](./client/src/images/login.png)
 
 ## Dashboard
-![Dashboard](./client/src/images/Dashboard.png)
+![Dashboard](./client/src/images/dashboard.png)
 
 ## Add Transactions
 ![Add Transactions](./client/src/images/add-transaction.png)
