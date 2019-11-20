@@ -81,8 +81,10 @@ export class SetupBudgets extends Component {
         <Link to="/dashboard">
           <i className="material-icons back-button">arrow_back</i>
         </Link>
-        <h3>Setup Your Budgets</h3>
+        
         <Container>
+        <h3>Setup Your Budgets</h3>     
+           <hr />
           <Form onSubmit={this.onSubmit}>
             <Row>
               <Col xs={12}>

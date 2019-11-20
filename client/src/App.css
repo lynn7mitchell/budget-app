@@ -161,7 +161,9 @@ header {
         font-size: 3em;
         text-align: center;
     }
-
+    h3{
+        text-align: center;
+    }
     h4 {
         text-align: center
     }
@@ -172,16 +174,19 @@ header {
     }
 
 
-    form {
+    /* form {
         background: #00CF60;
         text-align: center;
         color: #fff;
-    }
+    } */
 
     label {
         color: #fff !important;
     }
 
+    .form-label{
+        color: #000 !important;
+    }
     .login-signup-green {
         background: #fff;
         color: #00CF60;
