@@ -121,8 +121,8 @@ header {
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    /* border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px; */
     padding-top: 15px;
 }
 .dashboard-sidebar h4{

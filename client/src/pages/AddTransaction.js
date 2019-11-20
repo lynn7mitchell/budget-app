@@ -75,6 +75,8 @@ export class AddTransaction extends Component {
           <i className="material-icons back-button">arrow_back</i>
         </Link>
       <Container>
+      <h3>Add A Transaction</h3>
+        <hr />
         <Form onSubmit={this.onSubmit}>
           <Row>
             <Col xs={12}>

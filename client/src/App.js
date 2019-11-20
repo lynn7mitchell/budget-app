@@ -9,7 +9,6 @@ import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
 import Dashboard from "./pages/Dashboard"
 import AddTransaction from "./pages/AddTransaction"
-import EditBudgets from "./pages/EditBudgets"
 import TransactionPage from "./pages/TrasactionPage"
 import BudgetPage from "./pages/BudgetPage"
 import SetupBudgets from "./pages/SetupBudgets";
@@ -29,7 +28,7 @@ export class App extends Component {
             <PrivateRoute exact path="/transactions" component={TransactionPage} />
             <PrivateRoute exact path="/budgets" component={BudgetPage} />
             <PrivateRoute exact path="/add-transaction" component={AddTransaction} />
-            <PrivateRoute exact path="/edit-budgets" component={EditBudgets} />
+            <PrivateRoute exact path="/edit-budgets" component={SetupBudgets} />
             <Route exact component={NoMatch} />
           </Switch>
         </Router>

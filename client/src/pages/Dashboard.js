@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import Transactions from "../components/Transactions";
 import Budgets from "../components/Budgets";
 import Container from "react-bootstrap/Container";
@@ -51,10 +51,9 @@ export class Dashboard extends Component {
               Welcome {this.state.user.firstName} {this.state.user.lastName}
             </h4>
             <ul className="sidebar-items">
-              <li>Dashboard</li>
-              <li>Tansactions</li>
-              <li>Crypto Watch</li>
-              <li>Your Account</li>
+              <Link to="/budgets"><li>Dashboard</li></Link>
+              <Link to="/transactions"><li>Transactions</li></Link>
+              <Link to="/budgets"><li>Budgets</li></Link>
               <a onClick={this.handleLogout}>
                 <li cursor="pointer">Log Out</li>
               </a>
