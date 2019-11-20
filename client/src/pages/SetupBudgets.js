@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from "react-router-dom"
 import axios from "axios";
 import setAuthToken from "../utils/setAuthtoken";
 import Form from "react-bootstrap/Form";
@@ -54,19 +55,26 @@ export class SetupBudgets extends Component {
               debt: this.state.debt,
               insurance: this.state.insurance,
               savings: this.state.savings,
-              fun: this.state.fun
+              fun: this.state.fun,
+              redirect: false
         }
         console.log(newBudgets)
 
       axios
       .put("api/user/budgets", newBudgets)
-      .then(console.log(newBudgets))
+      .then(this.setState={
+        redirect: true
+      })
       .catch(err => console.log(err));
 
     alert("Budgets Updated");
+
+        
       }
     render() {
-      console.log(this.state.user)
+      if(this.state.redirect){
+        return <Redirect to="/dashboard"/>
+      }
         return (
             <div>
                 <h1>Setup Your Budgets</h1>

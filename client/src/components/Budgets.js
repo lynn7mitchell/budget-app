@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import axios from "axios";
 import setAuthToken from "../utils/setAuthtoken";
 import Table from "react-bootstrap/table";
-import Button from "react-bootstrap/button"
+import Button from "react-bootstrap/button";
 
 export class Budgets extends Component {
   state = {
     user: {},
+    budgets: {},
     transactions: [],
     food: {
       spent: 0,
@@ -64,7 +65,47 @@ export class Budgets extends Component {
         this.setState({
           user: response.data,
           budgets: response.data.budgets,
-          transactions: response.data.transactions
+          transactions: response.data.transactions,
+          food:{
+            spent: 0,
+            remaining: 0,
+            limit: response.data.budgets.food
+          },
+          transportation: {
+            spent: 0,
+            remaining: 0,
+            limit: response.data.budgets.transportation
+          },
+          lifestyle: {
+            spent: 0,
+            remaining: 0,
+            limit: response.data.budgets.lifestyle
+          },
+          housing: {
+            spent: 0,
+            remaining: 0,
+            limit: response.data.budgets.housing
+          },
+          debt: {
+            spent: 0,
+            remaining: 0,
+            limit: response.data.budgets.debt
+          },
+          insurance: {
+            spent: 0,
+            remaining: 0,
+            limit: response.data.budgets.insurance
+          },
+          savings: {
+            spent: 0,
+            remaining: 0,
+            limit: response.data.budgets.savings
+          },
+          fun: {
+            spent: 0,
+            remaining: 0,
+            limit: response.data.budgets.fun
+          },
         });
         for (let i = 0; i < this.state.transactions.length; i++) {
           let currentCategory = this.state.transactions[
@@ -155,11 +196,11 @@ export class Budgets extends Component {
               <td>{this.state.fun.remaining}</td>
               <td>{this.state.fun.limit}</td>
             </tr>
-           
           </tbody>
         </Table>
-        <Link to="edit-budgets"><Button variant="success">Edit Budgets</Button></Link>
-
+        <Link to="edit-budgets">
+          <Button variant="success">Edit Budgets</Button>
+        </Link>
       </div>
     );
   }
