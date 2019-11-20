@@ -129,15 +129,17 @@ export class Login extends Component {
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             </p>
             <p>
-              Already have an account? <Link to="signup" style={{color: "#00CF60"}}><span>Sign Up!</span></Link>
+              Don't have an account? <Link to="signup" style={{color: "#00CF60"}}><span>Sign Up!</span></Link>
             </p>
-            <Button
+            <Link to="/signup">          
+              <Button
               variant="outline-success"
               className="button-white"
               style={styles.button}
             >
-              Login
+              Sign Up
             </Button>
+            </Link>
           </Col>
 
           {/* RIGHT SECTION */}
