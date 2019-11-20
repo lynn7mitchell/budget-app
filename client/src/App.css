@@ -57,7 +57,9 @@ header {
     padding-bottom: 10px;
     height: 48vh
 }
-
+header .navbar-brand{
+    color: #fff !important;
+}
 .heading {
     height:75%;
     display: flex;
