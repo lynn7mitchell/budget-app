@@ -255,6 +255,9 @@ header {
         width: 100%;
         color: #fff !important;
     }
+    .dashboard-nav a{
+        color: #333;
+    }
     .dashboard-sidebar{
         display: none;
     }

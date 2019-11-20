@@ -38,9 +38,7 @@ export class Sidebar extends Component {
             Welcome {this.state.user.firstName} {this.state.user.lastName}
           </h4>
           <ul className="sidebar-items">
-            <Link to="/budgets">
-              <li>Dashboard</li>
-            </Link>
+           
             <Link to="/transactions">
               <li>Transactions</li>
             </Link>

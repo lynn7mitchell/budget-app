@@ -54,9 +54,8 @@ export class Dashboard extends Component {
           />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-            <Link to="/dashboard"><Nav.Link>Dashboard</Nav.Link></Link>
-            <Link to="/Transactions"><Nav.Link>Transactions</Nav.Link></Link>
-            <Link to="/Budgets"><Nav.Link>Budgets</Nav.Link></Link>
+            <Nav.Link><Link to="/transactions">Transactions</Link></Nav.Link>
+            <Nav.Link><Link to="/budgets">Budgets</Link></Nav.Link>
 
             </Nav>
           </Navbar.Collapse>
