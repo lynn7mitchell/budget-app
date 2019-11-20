@@ -28,13 +28,13 @@ This app was created to help with monthly budgeting
 ![Home](./client/src/images/Home.png)
 
 ## Log In
-![Language Dashboard](./client/src/images/login.png)
+![Log In](./client/src/images/login.png)
 
 ## Dashboard
-![Multiple Choice (kana)](./client/src/images/Dashboard.png)
+![Dashboard](./client/src/images/Dashboard.png)
 
 ## Add Transactions
-![Fill In The Blank](./client/src/images/add-transaction.png)
+![Add Transactions](./client/src/images/add-transaction.png)
 
 ## Set Up Budgets
-![Fill In The Blank](./client/src/images/editbudgets.png)
+![Set Up Budgets](./client/src/images/editbudgets.png)
