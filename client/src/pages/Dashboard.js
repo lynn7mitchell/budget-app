@@ -56,6 +56,7 @@ export class Dashboard extends Component {
             <Nav className="mr-auto">
             <Nav.Link><Link to="/transactions">Transactions</Link></Nav.Link>
             <Nav.Link><Link to="/budgets">Budgets</Link></Nav.Link>
+            <Nav.Link><Link onClick={this.handleLogout}>Log Out</Link></Nav.Link>
 
             </Nav>
           </Navbar.Collapse>

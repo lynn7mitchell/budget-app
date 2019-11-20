@@ -45,9 +45,9 @@ export class Sidebar extends Component {
             <Link to="/budgets">
               <li>Budgets</li>
             </Link>
-            <a onClick={this.handleLogout}>
+            <Link onClick={this.handleLogout}>
               <li cursor="pointer">Log Out</li>
-            </a>
+            </Link>
           </ul>
         
       </div>

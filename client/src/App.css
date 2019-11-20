@@ -12,9 +12,7 @@ h1 {
     font-size: 48px;
     line-height: 55px;
 }
-h2{
-    color: #00CF60
-}
+
 h3 {
     font-size: 30px;
     margin-top: 1rem;
@@ -95,6 +93,9 @@ header {
 
 
 /* LOGIN AND SIGNUP */
+.navbar-brand{
+    color: #00CF60 !important;
+}
 .left-section {
     padding: 2%;
     width: 40%;
@@ -162,6 +163,9 @@ header {
 
 
 @media only screen and (max-width: 600px) {
+    h2{
+        color: #00CF60
+    }
     html{
         width: 100%;
         overflow-x: hidden;
