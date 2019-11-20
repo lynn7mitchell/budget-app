@@ -8,6 +8,8 @@ import setAuthToken from "../utils/setAuthtoken";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Sidebar from "../components/Sidebar";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 export class Dashboard extends Component {
   state = {
@@ -44,26 +46,38 @@ export class Dashboard extends Component {
     return (
       <div>
         {/* <i className="material-icons account-circle">account_circle</i> */}
-        
+        <Navbar className="dashboard-nav" expand="lg">
+          <Navbar.Brand href="#home">Budget Master</Navbar.Brand>
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            style={{ marginTop: "15px" }}
+          />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+            <Link to="/dashboard"><Nav.Link>Dashboard</Nav.Link></Link>
+            <Link to="/Transactions"><Nav.Link>Transactions</Nav.Link></Link>
+            <Link to="/Budgets"><Nav.Link>Budgets</Nav.Link></Link>
+
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
         <Row>
-        <Col md={2} className="dashboard-sidebar">
-          <Sidebar/>
-        </Col>
+          <Col md={2} className="dashboard-sidebar">
+            <Sidebar />
+          </Col>
           <Col xs={12} md={10}>
             <Container>
               <Row>
-                <Col className="card" md={7}>
+                <Col className="card" xs={12} md={7}>
                   <Transactions />
                 </Col>
-                <Col className="card" md={5}>
+                <Col className="card" xs={12} md={5}>
                   <Budgets />
                 </Col>
               </Row>
             </Container>
           </Col>
         </Row>
-
-        
       </div>
     );
   }

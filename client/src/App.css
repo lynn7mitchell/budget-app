@@ -17,6 +17,7 @@ h2{
 }
 h3 {
     font-size: 30px;
+    margin-top: 1rem;
 }
 
 h4 {
@@ -24,6 +25,13 @@ h4 {
     line-height: 28px;
 }
 
+a{
+    color: #fff;
+    text-decoration: none;
+}
+button{
+    margin-bottom: 1rem;
+}
 .button-white {
     background: #fff;
     color: #00CF60;
@@ -42,7 +50,9 @@ h4 {
     left: 2vh;
     color: #000;
   }
-
+.card{
+    margin-top: 2rem;
+}
 /* HOME */
 header {
     background: #00CF60;
@@ -107,7 +117,6 @@ header {
   }
   
   /* DASHBOARD */
-
 .account-circle{
     color: #00CF60;
     position: absolute;
@@ -145,9 +154,18 @@ header {
 
 
 
+@media only screen and (min-width: 600px) {
+    .dashboard-nav{
+        display: none;
+    }
+}
 
 
 @media only screen and (max-width: 600px) {
+    html{
+        width: 100%;
+        overflow-x: hidden;
+    }
     .nav-warpper {
         background: #00CF60;
     }
@@ -199,7 +217,9 @@ header {
         text-align: center;
         color: #fff;
     }
-
+    .card{
+        overflow-x: hidden;
+    }
 
 
 
@@ -230,7 +250,11 @@ header {
 
 
     /* DASHBOARD */
-
+    .dashboard-nav, .navbar-light{
+        /* background: #00CF60; */
+        width: 100%;
+        color: #fff !important;
+    }
     .dashboard-sidebar{
         display: none;
     }
