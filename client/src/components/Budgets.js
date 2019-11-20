@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import setAuthToken from "../utils/setAuthtoken";
-import Table from "react-bootstrap/table";
-import Button from "react-bootstrap/button";
+import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
 
 export class Budgets extends Component {
   state = {
