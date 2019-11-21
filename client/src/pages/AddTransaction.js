@@ -14,7 +14,7 @@ export class AddTransaction extends Component {
     user: {},
     amount: "",
     description: "",
-    category: "",
+    category: "Food",
     date: new Date(),
     startDate: new Date()
   };
