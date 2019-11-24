@@ -147,7 +147,9 @@ export class Login extends Component {
 <Container>
             <Form onSubmit={this.onSubmit}>
               <Row>
+
                 <Col xs={12}>
+                  <p>Demo Login <br/>email: test@gmail.com<br/>   password: test</p>
                   <Form.Control type="email" placeholder="Email" name="email" onChange={this.onChange} />
                 </Col>
               </Row>

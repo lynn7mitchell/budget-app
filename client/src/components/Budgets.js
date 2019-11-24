@@ -107,10 +107,12 @@ export class Budgets extends Component {
             limit: response.data.budgets.fun
           },
         });
+        console.log(this.state.transactions.length)
         for (let i = 0; i < this.state.transactions.length; i++) {
           let currentCategory = this.state.transactions[
             i
           ].category.toLowerCase();
+          console.table(this.state.transactions.length)
           let currentSpent =
             this.state[currentCategory].spent +
             parseFloat(this.state.transactions[i].amount);
@@ -124,7 +126,8 @@ export class Budgets extends Component {
               remaining: currentRemaining
             }
           });
-          console.log(this.state[currentCategory]);
+          // console.log(this.state[currentCategory]);
+          console.log(i)
         }
 
         console.log(this.state.transactions.length);
