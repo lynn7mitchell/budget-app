@@ -68,42 +68,42 @@ export class Budgets extends Component {
           transactions: response.data.transactions,
           food:{
             spent: 0,
-            remaining: 0,
+            remaining:  response.data.budgets.food,
             limit: response.data.budgets.food
           },
           transportation: {
             spent: 0,
-            remaining: 0,
+            remaining: response.data.budgets.transportation,
             limit: response.data.budgets.transportation
           },
           lifestyle: {
             spent: 0,
-            remaining: 0,
+            remaining: response.data.budgets.lifestyle,
             limit: response.data.budgets.lifestyle
           },
           housing: {
             spent: 0,
-            remaining: 0,
+            remaining: response.data.budgets.housing,
             limit: response.data.budgets.housing
           },
           debt: {
             spent: 0,
-            remaining: 0,
+            remaining: response.data.budgets.debt,
             limit: response.data.budgets.debt
           },
           insurance: {
             spent: 0,
-            remaining: 0,
+            remaining: response.data.budgets.insurance,
             limit: response.data.budgets.insurance
           },
           savings: {
             spent: 0,
-            remaining: 0,
+            remaining: response.data.budgets.savings,
             limit: response.data.budgets.savings
           },
           fun: {
             spent: 0,
-            remaining: 0,
+            remaining: response.data.budgets.fun,
             limit: response.data.budgets.fun
           },
         });
