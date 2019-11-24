@@ -39,6 +39,10 @@ export class Landing extends Component {
           <div class="container heading">
             <h1>Budget Master</h1>
             <h4>Take back control of your money and master your budget with Budget Master</h4>
+            <br/>
+            <br/>
+            <p>Demo Login <br/>email: test@gmail.com<br/>   password: test</p>
+
           </div>
         </header>
         <Container className="landing-page-info">
