@@ -43,6 +43,7 @@ export class Dashboard extends Component {
     if (this.state.redirect) {
       return <Redirect to="/" />;
     }
+    
     return (
       <div>
         {/* <i className="material-icons account-circle">account_circle</i> */}
@@ -68,10 +69,10 @@ export class Dashboard extends Component {
           <Col xs={12} md={10}>
             <Container>
               <Row>
-                <Col className="card" xs={12} md={7}>
+                <Col className="card" xs={12} md={6}>
                   <Transactions />
                 </Col>
-                <Col className="card" xs={12} md={5}>
+                <Col className="card" xs={12} md={{span: 5, offset: 1}}>
                   <Budgets />
                 </Col>
               </Row>
