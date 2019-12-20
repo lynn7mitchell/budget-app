@@ -149,6 +149,10 @@ header .navbar-brand{
 .sidebar-items li{
     margin-bottom: 10vh;
 }
+.sidebar-items a:hover{
+    text-decoration: none;
+    color: #333;
+}
 
 
 /* TRANSACTION */
