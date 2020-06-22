@@ -68,7 +68,7 @@ export class Budgets extends Component {
           transactions: response.data.transactions,
           food:{
             spent: 0,
-            remaining:  response.data.budgets.food,
+            remaining:  response.data.budgets.food.toFixed(2),
             limit: response.data.budgets.food
           },
           transportation: {
@@ -118,12 +118,12 @@ export class Budgets extends Component {
             parseFloat(this.state.transactions[i].amount);
           let currentLimit = this.state.budgets[currentCategory];
           let currentRemaining = currentLimit - currentSpent;
-          console.log(currentRemaining);
+          console.log(currentRemaining.toFixed(2));
           this.setState({
             [currentCategory]: {
               spent: currentSpent,
               limit: currentLimit,
-              remaining: currentRemaining
+              remaining: currentRemaining.toFixed(2)
             }
           });
           // console.log(this.state[currentCategory]);

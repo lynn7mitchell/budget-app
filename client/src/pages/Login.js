@@ -68,6 +68,7 @@ export class Login extends Component {
                 })
             )
     }
+
   render() {
    
     const styles = {
@@ -86,12 +87,12 @@ export class Login extends Component {
         
     };
 
-    const {errors} = this.state;
 
     if(this.state.redirect){
       return <Redirect to="/dashboard"/>
     }
-    
+    const {errors} = this.state;
+
     return (
       <div className="login-signup">
         {/* NAVBAR */}
@@ -150,12 +151,15 @@ export class Login extends Component {
 
                 <Col xs={12}>
                   <p>Demo Login <br/>email: test@gmail.com<br/>   password: test</p>
+                  {errors.email && <div style={styles.error}>{errors.email}</div>}
                   <Form.Control type="email" placeholder="Email" name="email" onChange={this.onChange} />
                 </Col>
               </Row>
               <br/>
               <Row>
+             
                 <Col xs={12}>
+                
                   <Form.Control type="password" placeholder="Password" name="password" onChange={this.onChange} />
                 </Col>
               </Row>
