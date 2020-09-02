@@ -150,7 +150,7 @@ export class Login extends Component {
               <Row>
 
                 <Col xs={12}>
-                  <p>Demo Login <br/>email: test@gmail.com<br/>   password: test</p>
+                  <p>Demo Login <br/>email: demotest@gmail.com<br/>   password: demotest</p>
                   {errors.email && <div style={styles.error}>{errors.email}</div>}
                   <Form.Control type="email" placeholder="Email" name="email" onChange={this.onChange} />
                 </Col>

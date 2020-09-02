@@ -41,7 +41,7 @@ export class Landing extends Component {
             <h4>Take back control of your money and master your budget with Budget Master</h4>
             <br/>
             <br/>
-            <p>Demo Login <br/>email: test@gmail.com<br/>   password: test</p>
+            <p>Demo Login <br/>email: demotest@gmail.com<br/>   password: demotest</p>
 
           </div>
         </header>

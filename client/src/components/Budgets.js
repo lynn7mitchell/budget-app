@@ -123,6 +123,8 @@ export class Budgets extends Component {
             [currentCategory]: {
               spent: currentSpent,
               limit: currentLimit,
+              // toFixed changes this amount to a string
+              // This is okay in this situation because this is only going to the state and not the database
               remaining: currentRemaining.toFixed(2)
             }
           });
