@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.css";
+// import "./App.css";
 import PrivateRoute from "./utils/PrivateRoute";
 import Landing from "./pages/Landing";
 import SignUp from "./pages/SignUp";
@@ -12,7 +12,7 @@ import AddTransaction from "./pages/AddTransaction"
 import TransactionPage from "./pages/TrasactionPage"
 import BudgetPage from "./pages/BudgetPage"
 import SetupBudgets from "./pages/SetupBudgets";
-
+import Home from './pages/Home'
 
 export class App extends Component {
   render() {
@@ -21,6 +21,7 @@ export class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={Landing} />
+            <Route exact path="/home" component={Home} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/login" component={Login} />
             <PrivateRoute exact path="/setup-budgets" component={SetupBudgets} />
