@@ -79,7 +79,7 @@ module.exports = function (app) {
 
     app.post('/api/user/login', (req, res) => {
         const { email, password } = req.body;
-        console.log(email)
+        console.log(req.body)
         db.User.findOne({ email: email })
             .then(user => {
                 console.log("********************",user)

@@ -6,6 +6,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 import Landing from "./pages/Landing";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
+import NewLogin from './pages/NewLogin'
 import NoMatch from "./pages/NoMatch";
 import Dashboard from "./pages/Dashboard"
 import AddTransaction from "./pages/AddTransaction"
@@ -24,6 +25,7 @@ export class App extends Component {
             <Route exact path="/home" component={Home} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/newlogin" component={NewLogin} />
             <PrivateRoute exact path="/setup-budgets" component={SetupBudgets} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/transactions" component={TransactionPage} />
