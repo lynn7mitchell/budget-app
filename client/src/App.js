@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import PrivateRoute from "./utils/PrivateRoute";
 import Landing from "./pages/Landing";
 import SignUp from "./pages/SignUp";
+import NewSignUp from "./pages/NewSignUp";
 import Login from "./pages/Login";
 import NewLogin from './pages/NewLogin'
 import NoMatch from "./pages/NoMatch";
@@ -26,6 +27,7 @@ export class App extends Component {
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/newlogin" component={NewLogin} />
+            <Route exact path="/newsignup" component={NewSignUp} />
             <PrivateRoute exact path="/setup-budgets" component={SetupBudgets} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/transactions" component={TransactionPage} />
