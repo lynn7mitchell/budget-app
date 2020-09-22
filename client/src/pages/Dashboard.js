@@ -7,7 +7,7 @@ import axios from "axios";
 import setAuthToken from "../utils/setAuthtoken";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../components/SideBar";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 

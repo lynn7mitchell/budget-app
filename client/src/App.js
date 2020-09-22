@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import NewLogin from './pages/NewLogin'
 import NoMatch from "./pages/NoMatch";
 import Dashboard from "./pages/Dashboard"
+import NewDash from './pages/NewDash'
 import AddTransaction from "./pages/AddTransaction"
 import TransactionPage from "./pages/TrasactionPage"
 import BudgetPage from "./pages/BudgetPage"
@@ -30,6 +31,7 @@ export class App extends Component {
             <Route exact path="/newsignup" component={NewSignUp} />
             <PrivateRoute exact path="/setup-budgets" component={SetupBudgets} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/newdash" component={NewDash} />
             <PrivateRoute exact path="/transactions" component={TransactionPage} />
             <PrivateRoute exact path="/budgets" component={BudgetPage} />
             <PrivateRoute exact path="/add-transaction" component={AddTransaction} />

@@ -1,58 +1,58 @@
-import React, { Component } from "react";
-import axios from "axios";
-import setAuthToken from "../utils/setAuthtoken";
-import { Link } from "react-router-dom";
-import Col from "react-bootstrap/Col";
-
-export class Sidebar extends Component {
-    state = {
-        user: {},
-        redirect: false
-      };
-      componentWillMount() {
-        const token = localStorage.getItem("example-app");
-    
-        if (token) {
-          setAuthToken(token);
-        }
-    
-        axios
-          .get("api/user")
-          .then(response => {
-            this.setState({
-              user: response.data
-            });
-          })
-          .catch(err => console.log(err.response));
-      }
-      handleLogout = () => {
-        localStorage.removeItem("example-app");
-        this.setState({
-          redirect: true
-        });
-      };
-  render() {
-    return (
-      <div>
-          <h4>
-            Welcome {this.state.user.firstName} {this.state.user.lastName}
-          </h4>
-          <ul className="sidebar-items">
-           
-            <Link to="/transactions">
-              <li>Transactions</li>
-            </Link>
-            <Link to="/budgets">
-              <li>Budgets</li>
-            </Link>
-            <Link onClick={this.handleLogout}>
-              <li cursor="pointer">Log Out</li>
-            </Link>
-          </ul>
-        
-      </div>
-    );
+import React, { useState } from "react";
+import {
+  Drawer,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
+const testStyles = makeStyles({
+  test:{
+    width: '200px',
+    height: '100%',
+    background: '#4CAF50',
+  },
+  test:{
+    color: '#fff'
   }
-}
+});
+export default function SideBar() {
+  const classes = testStyles()
+  const itemsList = [
+    {
+      text: 'Inbox',
+      icon: <InboxIcon />
+    },
+    {
+      text: 'Starred',
+      icon: <MailIcon />
+    },
+    {
+      text: 'Send Email',
+      icon: <MailIcon />
 
-export default Sidebar;
+    },
+    {
+      text: 'Drafts',
+      icon: <MailIcon />
+
+    }
+  ]
+  return (
+    <Drawer variant="permanent" className={classes.test} >
+      <List>
+        {itemsList.map((item, index) => {
+         const {text, icon} = item;
+         return(
+          <ListItem button key={text}>
+            {icon && <ListItemIcon>{icon}</ListItemIcon>}
+            <ListItemText primary={text} />
+          </ListItem>
+        )})}
+      </List>
+    </Drawer>
+  );
+}
