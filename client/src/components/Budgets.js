@@ -113,9 +113,11 @@ export class Budgets extends Component {
             i
           ].category.toLowerCase();
           console.table(this.state.transactions.length)
+
           let currentSpent =
             this.state[currentCategory].spent +
             parseFloat(this.state.transactions[i].amount);
+            
           let currentLimit = this.state.budgets[currentCategory];
           let currentRemaining = currentLimit - currentSpent;
           console.log(currentRemaining.toFixed(2));

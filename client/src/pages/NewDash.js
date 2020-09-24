@@ -4,6 +4,7 @@ import axios from "axios";
 import setAuthToken from "../utils/setAuthtoken";
 import SideBar from "../components/SideBar";
 import Transactions from "../components/NewTransactions";
+import Budgets from '../components/NewBudgets'
 import {
   Button,
   Typography,
@@ -49,6 +50,9 @@ export default function NewDash() {
         </Grid>
         <Grid item>
           <Transactions/>
+        </Grid>
+        <Grid item>
+          <Budgets/>
         </Grid>
       </Grid>
     </div>
