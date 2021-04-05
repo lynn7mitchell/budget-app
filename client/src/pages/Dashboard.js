@@ -45,7 +45,7 @@ export class Dashboard extends Component {
     }
     
     return (
-      <div>
+      <div style={{ overflow: "none" }}>
         {/* <i className="material-icons account-circle">account_circle</i> */}
         <Navbar className="dashboard-nav" expand="lg">
           <Navbar.Brand href="#home">Budget Master</Navbar.Brand>
@@ -63,16 +63,14 @@ export class Dashboard extends Component {
           </Navbar.Collapse>
         </Navbar>
         <Row>
-          <Col md={2} className="dashboard-sidebar">
-            <Sidebar />
-          </Col>
-          <Col xs={12} md={10}>
+         
+          <Col xs={12} md={12}>
             <Container>
               <Row>
                 <Col className="card" xs={12} md={6}>
                   <Transactions />
                 </Col>
-                <Col className="card" xs={12} md={{span: 5, offset: 1}}>
+                <Col className="card" xs={12} md={6}>
                   <Budgets />
                 </Col>
               </Row>
